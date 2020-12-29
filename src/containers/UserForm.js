@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import FormUserDetails from "../containers/FormUserDetails";
 import FormPersonalDetails from "../containers/FormPersonalDetails";
+import Confirm from "../containers/Confirm";
 
 const UserForm = () => {
   const [firstInfo, setFirstInfo] = useState({
@@ -44,7 +45,9 @@ const UserForm = () => {
           values={values}
         />
       )}
-      {step === 3 && <h1>Confirm</h1>}
+      {step === 3 && (
+        <Confirm nextStep={nextStep} prevStep={prevStep} values={values} />
+      )}
       {step === 4 && <h1>Success</h1>}
     </>
   );
