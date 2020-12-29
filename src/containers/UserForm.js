@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import FormUserDetails from "../containers/FormUserDetails";
+import FormPersonalDetails from "../containers/FormPersonalDetails";
 
 const UserForm = () => {
   const [firstInfo, setFirstInfo] = useState({
@@ -33,9 +34,16 @@ const UserForm = () => {
           nextStep={nextStep}
           changeInfo={changeInfo}
           values={values}
-        ></FormUserDetails>
+        />
       )}
-      {step === 2 && <h1>FormPersonalDetails</h1>}
+      {step === 2 && (
+        <FormPersonalDetails
+          nextStep={nextStep}
+          prevStep={prevStep}
+          changeInfo={changeInfo}
+          values={values}
+        />
+      )}
       {step === 3 && <h1>Confirm</h1>}
       {step === 4 && <h1>Success</h1>}
     </>

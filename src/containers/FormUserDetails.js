@@ -9,6 +9,7 @@ const FormUserDetails = ({ nextStep, changeInfo, values }) => {
     }
     nextStep();
   };
+
   return (
     <UserFormDetailsContainer>
       <UserFormDetailsForm>
