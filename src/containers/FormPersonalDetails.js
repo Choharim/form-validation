@@ -20,18 +20,21 @@ const FormPersonalDetails = ({ prevStep, nextStep, changeInfo, values }) => {
         <OccupationLabel>Occupation</OccupationLabel>
         <OccupationInput
           onChange={changeInfo("occupation")}
+          defaultValue={values.occupation}
           type="text"
           placeholder="Enter Your Occupation"
         />
         <CityLabel>City</CityLabel>
         <CityInput
           onChange={changeInfo("city")}
+          defaultValue={values.city}
           type="text"
           placeholder="Enter Your City"
         />
         <BioLabel>Bio</BioLabel>
         <BioInput
           onChange={changeInfo("bio")}
+          defaultValue={values.bio}
           type="text"
           placeholder="Enter Your Bio"
         />

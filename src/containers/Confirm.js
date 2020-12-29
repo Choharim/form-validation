@@ -21,8 +21,10 @@ const Confirm = ({ prevStep, nextStep, values }) => {
           </>
         ))}
         <BtnContainer>
-          <BackBtn>Back</BackBtn>
-          <ConfirmContinueBtn>Confirm & Continue</ConfirmContinueBtn>
+          <BackBtn onClick={prevStep}>Back</BackBtn>
+          <ConfirmContinueBtn onClick={nextStep}>
+            Confirm & Continue
+          </ConfirmContinueBtn>
         </BtnContainer>
       </InfoListContainer>
     </ConfirmContainer>
