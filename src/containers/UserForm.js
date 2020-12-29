@@ -21,7 +21,7 @@ const UserForm = () => {
     setFirstInfo({ ...firstInfo, step: step - 1 });
   };
   const changeInfo = (input) => (e) => {
-    setFirstInfo({ ...firstInfo, input: e.target.value });
+    setFirstInfo({ ...firstInfo, [input]: e.target.value });
   };
 
   console.log(firstInfo);

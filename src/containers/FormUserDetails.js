@@ -1,16 +1,39 @@
 import React from "react";
 import styled from "styled-components";
 
-const FormUserDetails = () => {
+const FormUserDetails = ({ nextStep, changeInfo, values }) => {
+  const check = (e) => {
+    e.preventDefault();
+    if (values.firstName && values.lastName && values.email) {
+      nextStep();
+    }
+    nextStep();
+  };
   return (
     <UserFormDetailsContainer>
       <UserFormDetailsForm>
         <FirstNameLabel>First Name</FirstNameLabel>
-        <FirstNameInput type="text" placeholder="Enter Your FirstName" />
+        <FirstNameInput
+          onChange={changeInfo("firstName")}
+          defaultValue={values.firstName}
+          type="text"
+          placeholder="Enter Your FirstName"
+        />
         <LastNameLabel>Last Name</LastNameLabel>
-        <LastNameInput type="text" placeholder="Enter Your LastName" />
+        <LastNameInput
+          onChange={changeInfo("lastName")}
+          defaultValue={values.lastName}
+          type="text"
+          placeholder="Enter Your LastName"
+        />
         <EmailLabel>Email</EmailLabel>
-        <EmailInput type="email" placeholder="Enter Your Email" />
+        <EmailInput
+          onChange={changeInfo("email")}
+          defaultValue={values.email}
+          type="email"
+          placeholder="Enter Your Email"
+        />
+        <ContinueBtn onClick={check}>continue</ContinueBtn>
       </UserFormDetailsForm>
     </UserFormDetailsContainer>
   );
@@ -77,4 +100,15 @@ const EmailInput = styled.input`
   padding: 2px;
   margin-bottom: 20px;
   font-size: 1.2rem;
+`;
+
+const ContinueBtn = styled.button`
+  align-self: flex-start;
+  padding: 6px 10px;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  background-color: powderblue;
+  font-size: 1.2rem;
+  color: gray;
 `;
