@@ -7,7 +7,6 @@ const FormUserDetails = ({ nextStep, changeInfo, values }) => {
     if (values.firstName && values.lastName && values.email) {
       nextStep();
     }
-    nextStep();
   };
 
   return (

@@ -9,21 +9,32 @@ const FormPersonalDetails = ({ prevStep, nextStep, changeInfo, values }) => {
 
   const check = (e) => {
     e.preventDefault();
-    if (values.firstName && values.lastName && values.email) {
+    if (values.occupation && values.city && values.bio) {
       nextStep();
     }
-    nextStep();
   };
 
   return (
     <PersonalDetailsContainer>
       <PersonalDetailsForm>
         <OccupationLabel>Occupation</OccupationLabel>
-        <OccupationInput />
+        <OccupationInput
+          onChange={changeInfo("occupation")}
+          type="text"
+          placeholder="Enter Your Occupation"
+        />
         <CityLabel>City</CityLabel>
-        <CityInput />
+        <CityInput
+          onChange={changeInfo("city")}
+          type="text"
+          placeholder="Enter Your City"
+        />
         <BioLabel>Bio</BioLabel>
-        <BioInput />
+        <BioInput
+          onChange={changeInfo("bio")}
+          type="text"
+          placeholder="Enter Your Bio"
+        />
         <BtnConatiner>
           <BackBtn onClick={goBack}>Back</BackBtn>
           <ContinueBtn onClick={check}>continue</ContinueBtn>
